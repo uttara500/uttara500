@@ -6,29 +6,30 @@
   <title>Uttara (Tara) Das | Portfolio</title>
   <style>
     :root {
-      --primary: #0a4d68;
-      --secondary: #088395;
-      --accent: #05bfdb;
-      --dark: #111827;
-      --gray: #4b5563;
-      --light-gray: #f8fafc;
-      --border: #e2e8f0;
+      --bg: #f8fafc;
       --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0f766e;
+      --primary-light: #f0fdfa;
+      --primary-hover: #115e59;
+      --border: #e2e8f0;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
-      background-color: #fafbfc;
-      color: var(--dark);
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    /* Top Navigation Bar */
     header {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
@@ -38,20 +39,19 @@
     }
 
     nav {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1.25rem;
     }
 
     nav .logo {
       font-weight: 700;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: var(--primary);
       text-decoration: none;
-      letter-spacing: -0.3px;
     }
 
     nav ul {
@@ -62,7 +62,7 @@
 
     nav a {
       text-decoration: none;
-      color: var(--gray);
+      color: var(--muted);
       font-size: 0.9rem;
       font-weight: 600;
       transition: color 0.15s ease;
@@ -73,440 +73,515 @@
     }
 
     .container {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 2.5rem 1.25rem;
     }
 
-    /* Hero */
-    .hero {
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--border);
+    /* Header Profile Card */
+    .profile-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
 
-    .hero-pretitle {
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--secondary);
-      margin-bottom: 0.5rem;
+    .profile-card h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      line-height: 1.15;
-      color: var(--dark);
-      margin-bottom: 0.5rem;
+    .profile-card .tagline {
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
-    .hero .tagline {
-      font-size: 1.15rem;
-      color: var(--gray);
-      margin-bottom: 1.25rem;
-      font-weight: 500;
-    }
-
-    .hero .bio {
-      font-size: 1rem;
-      color: var(--gray);
-      max-width: 760px;
+    .profile-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
       margin-bottom: 1.5rem;
     }
 
-    .contact-bar {
+    .contact-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      align-items: center;
     }
 
-    .contact-btn {
-      display: inline-block;
-      padding: 0.45rem 1rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border-radius: 6px;
-      text-decoration: none;
+    .contact-pill {
+      background: var(--bg);
       border: 1px solid var(--border);
-      background: #ffffff;
-      color: var(--dark);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    .contact-btn.primary {
+    .contact-pill.btn-primary {
       background: var(--primary);
-      border-color: var(--primary);
       color: #ffffff;
+      border-color: var(--primary);
     }
 
-    /* Section Structure */
+    /* Section Styling */
     section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
 
     .section-title {
       font-size: 1.35rem;
-      color: var(--dark);
-      margin-bottom: 1.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
       font-weight: 700;
-      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* About Cards */
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .about-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+    /* Personal Research Section */
+    .research-block {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
       padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
     }
 
-    .about-card h3 {
-      font-size: 1rem;
+    .research-block h3 {
+      font-size: 1.05rem;
       color: var(--primary);
       margin-bottom: 0.5rem;
     }
 
-    .about-card p {
-      font-size: 0.9rem;
-      color: var(--gray);
-      line-height: 1.5;
+    .research-block p {
+      font-size: 0.95rem;
+      color: var(--text);
     }
 
-    /* Item Block */
-    .item-card {
-      background: var(--card-bg);
+    .sub-head {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .neuro-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .neuro-table th, .neuro-table td {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .neuro-table th {
+      background-color: #f1f5f9;
+      color: var(--text);
+    }
+
+    .research-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Nested Dependent Project Subsection */
+    .dependent-projects {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .dependent-projects .dep-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .compact-item {
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.25rem;
-      margin-bottom: 1.25rem;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
     }
 
-    .item-header {
+    .compact-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.25rem;
     }
 
-    .item-header h3 {
-      font-size: 1.05rem;
-      color: var(--dark);
-    }
-
-    .item-header .institution {
-      color: var(--secondary);
-      font-weight: 600;
+    .compact-header h4 {
       font-size: 0.95rem;
+      color: var(--text);
     }
 
-    .item-header .date-location {
+    .compact-header span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .compact-item p {
       font-size: 0.85rem;
-      color: var(--gray);
+      color: var(--muted);
     }
 
-    ul.bullet-list {
-      list-style-type: square;
-      padding-left: 1.25rem;
-      margin-top: 0.5rem;
-      color: var(--gray);
-      font-size: 0.9rem;
+    /* Standard Cards */
+    .experience-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    ul.bullet-list li {
+    .experience-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
       margin-bottom: 0.35rem;
     }
 
-    /* Skills */
+    .exp-header h3 {
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .exp-header .org {
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .exp-header .date-loc {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    ul.clean-list {
+      list-style-type: square;
+      padding-left: 1.25rem;
+      margin-top: 0.4rem;
+    }
+
+    ul.clean-list li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
-    .skill-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-    }
-
-    .skill-card h4 {
+    .skill-col h4 {
       font-size: 0.95rem;
       color: var(--primary);
       margin-bottom: 0.75rem;
     }
 
-    .tag-container {
+    .pill-wrap {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
     }
 
-    .tag {
-      background: var(--light-gray);
+    .pill {
+      background: var(--bg);
       border: 1px solid var(--border);
-      padding: 0.2rem 0.55rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 4px;
-      font-size: 0.8rem;
-      color: var(--dark);
+      font-size: 0.85rem;
+      color: var(--text);
     }
 
     footer {
-      padding: 2.5rem 0;
       text-align: center;
+      padding: 2rem 0 3rem;
       font-size: 0.85rem;
-      color: var(--gray);
-      background: #ffffff;
-      border-top: 1px solid var(--border);
+      color: var(--muted);
     }
 
     @media (max-width: 640px) {
-      .hero h1 { font-size: 2rem; }
       nav ul { display: none; }
-      .item-header { flex-direction: column; }
+      .profile-card h1 { font-size: 1.8rem; }
+      .exp-header { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Sticky Navbar -->
   <header>
     <nav>
       <a href="#" class="logo">Tara Das</a>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#focus">Focus Areas</a></li>
-        <li><a href="#research">Research & Code</a></li>
+        <li><a href="#personal-research">Personal Research</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education & Skills</a></li>
       </ul>
     </nav>
   </header>
 
   <div class="container">
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-      <span class="hero-pretitle">Portfolio & Resume</span>
+
+    <!-- About / Profile -->
+    <div class="profile-card" id="about">
       <h1>Uttara (Tara) Das</h1>
-      <p class="tagline">Microbiology at Virginia Tech • Pre-Med • Clinical Workflows & Research</p>
-      <p class="bio">
-        Senior at Virginia Tech majoring in Microbiology. I bridge the gap between hands-on clinical operations, wet-lab work, and computational problem solving. Outside of patient intake and lab assays, I like to program for fun, run genomic sequence analyses, and explore commercial healthcare dynamics like medical devices and sales.
+      <div class="tagline">Microbiology at Virginia Tech • Aspiring Medical Assistant & Scribe</div>
+      <p>
+        I am an undergraduate senior in Biological Sciences at Virginia Tech with a focus in microbiology. I have hands on experience in clinical shadowing, pharmacy workflows, and wet lab work. In my spare time, I like to program, run data analyses, and read into medical research and translational healthcare. I am also really interested in clinical operations and medical sales, especially how new therapeutics and medical tools translate into everyday doctor and patient care.
       </p>
-      <div class="contact-bar">
-        <a href="mailto:taradas204@gmail.com" class="contact-btn primary">taradas204@gmail.com</a>
-        <span class="contact-btn">571-471-8555[cite: 1]</span>
-        <span class="contact-btn">Fairfax, VA / Blacksburg, VA[cite: 1]</span>
+      <div class="contact-row">
+        <a href="mailto:taradas204@gmail.com" class="contact-pill btn-primary">taradas204@gmail.com</a>
+        <span class="contact-pill">571-471-8555</span>
+        <span class="contact-pill">Fairfax & Blacksburg, VA</span>
       </div>
-    </section>
+    </div>
 
-    <!-- Personalized Background & Focus Areas -->
-    <section id="focus">
-      <h2 class="section-title">What I'm About</h2>
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Medical & Translational Research</h3>
-          <p>Driven by how molecular biology applies directly to chronic disease management and patient care[cite: 1, 2]. Experienced with wet-lab protocols like DNA extractions and gel electrophoresis, as well as dry-lab exploratory genomics[cite: 2].</p>
-        </div>
-        <div class="about-card">
-          <h3>Medical Sales & Clinical Operations</h3>
-          <p>Drawn to the business and direct communication side of medicine[cite: 1]. Shadowed interactions between physicians and medical sales representatives, handled pharmacy software, and managed fast-paced clinic communications[cite: 1].</p>
-        </div>
-        <div class="about-card">
-          <h3>Programming & Data (For Fun & Science)</h3>
-          <p>I enjoy coding on the side to parse data, whether running R scripts for biostatistics[cite: 1], building custom tools, or writing scripts to align viral receptor mutations using BLAST and NCBI GenBank[cite: 2].</p>
-        </div>
+    <!-- Personal Research Tab / Section -->
+    <section id="personal-research">
+      <h2 class="section-title">Personal Research</h2>
+      
+      <div class="research-block">
+        <h3>Biomarkers & Epigenetic Profiles in C-PTSD & Treatment Resistance</h3>
+        <p>
+          <strong>Research Question:</strong> Can we identify predictive biomarkers (such as specific epigenetic methylation patterns, fMRI derived connectivity profiles in the default mode network, or genetic variations related to oxytocin and vasopressin receptors) that predict whether a C-PTSD patient will be a non responder to standard frontline treatment?
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);">
+          <strong>Objective:</strong> Finding these markers early enables personalized medicine, steering individuals to alternatives like neurofeedback, psychedelic assisted psychotherapy, or novel pharmacological tools instead of putting them through standard protocols that may not fit.
+        </p>
       </div>
-    </section>
 
-    <!-- Research & Computational Projects -->
-    <section id="research">
-      <h2 class="section-title">Research & Technical Projects</h2>
+      <div class="sub-head">Structural & Functional Brain Circuit Changes</div>
+      <p class="research-text">
+        Chronic developmental trauma alters the circuits responsible for emotion, context, and executive control. The amygdala acts as an over stimulated alarm, while fronto cortical regulation is reduced, leaving the brain in a persistent survival loop.
+      </p>
 
-      <div class="item-card">
-        <div class="item-header">
-          <div>
-            <h3>Independent Computational Virology Project</h3>
-            <span class="institution">Self-Directed Study | Virginia Tech[cite: 2]</span>
+      <table class="neuro-table">
+        <thead>
+          <tr>
+            <th>Brain Region</th>
+            <th>Observed Change</th>
+            <th>Behavioral Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Amygdala</strong></td>
+            <td>Hyperactive fear response circuit</td>
+            <td>Hypervigilance, high startle responses, and explosive stress reactions.</td>
+          </tr>
+          <tr>
+            <td><strong>Prefrontal Cortex (PFC)</strong></td>
+            <td>Hypoactive regulation / decreased volume</td>
+            <td>Emotional dysregulation, impulse inhibition challenges, and trouble settling down during high stress.</td>
+          </tr>
+          <tr>
+            <td><strong>Hippocampus</strong></td>
+            <td>Volume reduction from chronic cortisol load</td>
+            <td>Disorientation, trouble encoding context, and difficulty separating past memory from present situations.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sub-head">Epigenetic Mechanisms: FKBP5 & Systemic Strain</div>
+      <p class="research-text">
+        Trauma does not rewrite genomic letters, but it places chemical markers that change how genes are read. Childhood trauma strongly correlates with hypomethylation of the <em>FKBP5</em> gene. Because this gene becomes overactive, cortisol regulation stays impaired, fueling constant hyperarousal. Over time, related epigenetic changes in immune signaling also increase susceptibility to chronic inflammation.
+      </p>
+
+      <div class="sub-head">Network Connectivity & Dissociation</div>
+      <p class="research-text">
+        In healthy states, the Default Mode Network (DMN, self reflection) and Central Executive Network (CEN, external focus) balance each other dynamically. In dissociative states, DMN connectivity drops, bringing on feelings of depersonalization. Additionally, extreme stress can prompt corticolimbic over modulation, where frontal regions suddenly shut down fear centers to force an escape, causing emotional numbness.
+      </p>
+
+      <!-- Dependent, smaller section for projects from the resume -->
+      <div class="dependent-projects">
+        <div class="dep-title">Other Independent Projects & Lab Work</div>
+
+        <div class="compact-item">
+          <div class="compact-header">
+            <h4>Computational Virology (Self Study)</h4>
+            <span>March 2026 – Present</span>
           </div>
-          <span class="date-location">March 2026 – Present[cite: 2]</span>
+          <p>
+            Utilizing NCBI GenBank to track emerging zoonotic variants, running BLAST sequence alignments to inspect surface glycoprotein mutations, and reviewing literature on receptor binding affinity.
+          </p>
         </div>
-        <ul class="bullet-list">
-          <li>Leverage open-access NCBI GenBank databases to retrieve genomic sequences of emerging zoonotic viruses to track mutational trends[cite: 2].</li>
-          <li>Execute sequence alignments with BLAST to isolate critical mutations within surface glycoproteins responsible for host cell receptor affinity[cite: 2].</li>
-          <li>Examine structural biology papers to assess how amino acid substitutions impact cross-species transmission and viral tropism[cite: 2].</li>
-        </ul>
-      </div>
 
-      <div class="item-card">
-        <div class="item-header">
-          <div>
-            <h3>Microbiology Lab Intern</h3>
-            <span class="institution">George Mason University | Manassas, VA[cite: 2]</span>
+        <div class="compact-item">
+          <div class="compact-header">
+            <h4>Microbiome Behavioral Research (George Mason University)</h4>
+            <span>June 2022 – August 2022</span>
           </div>
-          <span class="date-location">June 2022 – August 2022[cite: 2]</span>
+          <p>
+            Assisted research on canine gut microbiomes and behavioral traits. Handled DNA extractions, agarose gel electrophoresis, sample tracking, and data entry in Excel.
+          </p>
         </div>
-        <ul class="bullet-list">
-          <li>Investigated correlations between canine gut microbiome compositions and aggressive/phobic behavioral patterns[cite: 2].</li>
-          <li>Performed DNA extractions, agarose gel electrophoresis, and preparation of samples for genomic sequencing[cite: 2].</li>
-          <li>Sorted, cataloged, and transported biological specimens while maintaining precise records in Excel[cite: 2].</li>
-        </ul>
       </div>
     </section>
 
-    <!-- Clinical & Leadership Experience -->
+    <!-- Experience -->
     <section id="experience">
-      <h2 class="section-title">Clinical, Work & Leadership Experience</h2>
+      <h2 class="section-title">Clinical & Work Experience</h2>
 
-      <div class="item-card">
-        <div class="item-header">
+      <div class="experience-item">
+        <div class="exp-header">
           <div>
             <h3>Clinical Shadowing Intern</h3>
-            <span class="institution">Integrative Medicine Associates – Comprehensive Healing | Oradell, NJ[cite: 1, 2]</span>
+            <span class="org">Integrative Medicine Associates | Oradell, NJ</span>
           </div>
-          <span class="date-location">May 2026 – Aug 2026 & May 2024 – Aug 2024[cite: 1, 2]</span>
+          <span class="date-loc">May 2026 – Aug 2026 & May 2024 – Aug 2024</span>
         </div>
-        <ul class="bullet-list">
-          <li>Observed epigenetic-focused consultations and personalized care models across initial intakes and chronic disease visits[cite: 1, 2].</li>
-          <li>Managed administrative workflows, coordinated clinic schedules, and supported clear communication channels between staff and patients[cite: 1].</li>
+        <ul class="clean-list">
+          <li>Observed clinical workflows focused on chronic disease management and personalized patient care models.</li>
+          <li>Supported clinic intake coordination, schedule maintenance, and direct patient communication.</li>
         </ul>
       </div>
 
-      <div class="item-card">
-        <div class="item-header">
+      <div class="experience-item">
+        <div class="exp-header">
           <div>
             <h3>Clinical Shadowing Intern</h3>
-            <span class="institution">Concierge Internal Medicine | Reston, VA[cite: 1]</span>
+            <span class="org">Concierge Internal Medicine | Reston, VA</span>
           </div>
-          <span class="date-location">June 2024 – August 2024[cite: 1]</span>
+          <span class="date-loc">June 2024 – August 2024</span>
         </div>
-        <ul class="bullet-list">
-          <li>Observed outpatient triage, diagnostic reasoning, individualized treatment design, and communication between physicians and medical sales reps[cite: 1].</li>
+        <ul class="clean-list">
+          <li>Observed patient triage, treatment plans, and daily discussions between clinical teams and medical sales representatives.</li>
         </ul>
       </div>
 
-      <div class="item-card">
-        <div class="item-header">
+      <div class="experience-item">
+        <div class="exp-header">
           <div>
             <h3>Pharmacy Clerk</h3>
-            <span class="institution">Giant Food | Reston, VA[cite: 1]</span>
+            <span class="org">Giant Food | Reston, VA</span>
           </div>
-          <span class="date-location">June 2024 – August 2024[cite: 1]</span>
+          <span class="date-loc">June 2024 – August 2024</span>
         </div>
-        <ul class="bullet-list">
-          <li>Operated EnterpriseRX and PickPoint software to locate, log, and dispense prescription orders efficiently[cite: 1].</li>
-          <li>Fielded high-volume incoming patient calls and interfaced with physician offices regarding script verifications[cite: 1].</li>
+        <ul class="clean-list">
+          <li>Dispensed prescriptions and worked directly with EnterpriseRX and PickPoint systems.</li>
+          <li>Handled patient inquiries and helped coordinate verification calls with physician offices.</li>
         </ul>
       </div>
 
-      <div class="item-card">
-        <div class="item-header">
+      <div class="experience-item">
+        <div class="exp-header">
           <div>
             <h3>Treasurer & Social Media Manager</h3>
-            <span class="institution">GOAERO Drone Club | Blacksburg, VA[cite: 1]</span>
+            <span class="org">GOAERO Drone Club | Blacksburg, VA</span>
           </div>
-          <span class="date-location">August 2024 – August 2025[cite: 1]</span>
+          <span class="date-loc">August 2024 – August 2025</span>
         </div>
-        <ul class="bullet-list">
-          <li>Oversaw organizational budgets, managed expenditures, and allocated funding toward drone builds and flight hardware[cite: 1].</li>
-          <li>Led social media branding and digital content to boost collegiate club membership and campus visibility[cite: 1].</li>
+        <ul class="clean-list">
+          <li>Managed club finances, maintained account records, and directed social outreach across campus.</li>
         </ul>
       </div>
 
-      <div class="item-card">
-        <div class="item-header">
+      <div class="experience-item">
+        <div class="exp-header">
           <div>
-            <h3>National Resource Mapping Volunteer</h3>
-            <span class="institution">Luv Michael | Remote[cite: 1]</span>
+            <h3>Volunteer</h3>
+            <span class="org">Luv Michael | Remote</span>
           </div>
-          <span class="date-location">April 2026 – Present[cite: 1]</span>
+          <span class="date-loc">April 2026 – Present</span>
         </div>
-        <ul class="bullet-list">
-          <li>Contributed 30+ service hours toward mapping autism healthcare and housing resources across national databases[cite: 1].</li>
-          <li>Designed a structured outreach initiative to expand autism advocacy and fundraising at Virginia Tech[cite: 1].</li>
+        <ul class="clean-list">
+          <li>Completed over 30 hours mapping housing and healthcare resources for autistic adults across national databases.</li>
         </ul>
       </div>
     </section>
 
     <!-- Education & Skills -->
-    <section id="skills">
+    <section id="education">
       <h2 class="section-title">Education & Skills</h2>
 
-      <div class="item-card" style="margin-bottom: 1.5rem;">
-        <div class="item-header">
+      <div class="experience-item">
+        <div class="exp-header">
           <div>
             <h3>Virginia Tech</h3>
-            <span class="institution">B.S. in Microbiology[cite: 1]</span>
+            <span class="org">B.S. in Microbiology</span>
           </div>
-          <span class="date-location">August 2022 – Expected Dec 2026[cite: 1]</span>
+          <span class="date-loc">August 2022 – Expected Dec 2026</span>
         </div>
-        <p style="font-size: 0.9rem; color: var(--gray); margin-top: 0.35rem;">
-          <strong>Certifications:</strong> Mental Health First Aid (MHFA, August 2026) – Trained in crisis de-escalation and triage response[cite: 1].<br>
-          <strong>Coursework:</strong> Biostatistics (R & Excel)[cite: 1], Organic Chemistry Lab (Synthesis & Purification)[cite: 1], General Biology Lab[cite: 1].
+        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.35rem;">
+          <strong>Certifications:</strong> Mental Health First Aid (MHFA, August 2026)<br>
+          <strong>Relevant Labs & Courses:</strong> Biostatistics (R & Excel), Organic Chemistry Lab, General Biology Lab
         </p>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4>Laboratory</h4>
-          <div class="tag-container">
-            <span class="tag">DNA Extraction[cite: 2]</span>
-            <span class="tag">Gel Electrophoresis[cite: 2]</span>
-            <span class="tag">Sequencing Prep[cite: 2]</span>
-            <span class="tag">Compound Purification[cite: 1]</span>
-            <span class="tag">Microscopy[cite: 1]</span>
-            <span class="tag">Sterile Technique[cite: 2]</span>
+      <div class="skills-grid" style="margin-top: 1.5rem;">
+        <div class="skill-col">
+          <h4>Wet Lab</h4>
+          <div class="pill-wrap">
+            <span class="pill">DNA Extraction</span>
+            <span class="pill">Gel Electrophoresis</span>
+            <span class="pill">DNA Sequencing Prep</span>
+            <span class="pill">Microscopy</span>
+            <span class="pill">Sterile Technique</span>
+            <span class="pill">Specimen Handling</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h4>Code & Data</h4>
-          <div class="tag-container">
-            <span class="tag">R Language[cite: 1, 2]</span>
-            <span class="tag">BLAST Tools[cite: 2]</span>
-            <span class="tag">NCBI GenBank[cite: 2]</span>
-            <span class="tag">Cytoscape[cite: 2]</span>
-            <span class="tag">Java Basics[cite: 1, 2]</span>
-            <span class="tag">Excel (Pivots/Stats)[cite: 1, 2]</span>
+        <div class="skill-col">
+          <h4>Data & Coding</h4>
+          <div class="pill-wrap">
+            <span class="pill">R Coding</span>
+            <span class="pill">BLAST</span>
+            <span class="pill">NCBI GenBank</span>
+            <span class="pill">Cytoscape</span>
+            <span class="pill">Excel Analysis</span>
+            <span class="pill">Basic Java</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h4>Clinical & Systems</h4>
-          <div class="tag-container">
-            <span class="tag">EnterpriseRX[cite: 1, 2]</span>
-            <span class="tag">PickPoint[cite: 1, 2]</span>
-            <span class="tag">Clinical Intake[cite: 1]</span>
-            <span class="tag">Medical Sales Observation[cite: 1]</span>
-            <span class="tag">MHFA Certified[cite: 1]</span>
+        <div class="skill-col">
+          <h4>Clinical Tools</h4>
+          <div class="pill-wrap">
+            <span class="pill">EnterpriseRX</span>
+            <span class="pill">PickPoint</span>
+            <span class="pill">Patient Intake</span>
+            <span class="pill">MHFA De-escalation</span>
+            <span class="pill">EHR Coordination</span>
           </div>
         </div>
       </div>
     </section>
+
   </div>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Uttara Das • Blacksburg & Fairfax, VA[cite: 1]</p>
-    </div>
+    <p>&copy; 2026 Uttara Das • Blacksburg & Fairfax, VA</p>
   </footer>
 
 </body>
