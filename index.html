@@ -12,7 +12,6 @@
       --muted: #475569;
       --primary: #0f766e;
       --primary-light: #f0fdfa;
-      --primary-hover: #115e59;
       --border: #e2e8f0;
     }
 
@@ -29,7 +28,6 @@
       line-height: 1.6;
     }
 
-    /* Top Navigation Bar */
     header {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
@@ -78,7 +76,6 @@
       padding: 2.5rem 1.25rem;
     }
 
-    /* Header Profile Card */
     .profile-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -129,7 +126,6 @@
       border-color: var(--primary);
     }
 
-    /* Section Styling */
     section {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -146,6 +142,47 @@
       margin-bottom: 1.5rem;
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
+    }
+
+    /* Resume Section */
+    .resume-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .btn-view {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      height: 700px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
     }
 
     /* Personal Research Section */
@@ -199,7 +236,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Nested Dependent Project Subsection */
     .dependent-projects {
       margin-top: 2rem;
       padding-top: 1.25rem;
@@ -246,55 +282,6 @@
       color: var(--muted);
     }
 
-    /* Standard Cards */
-    .experience-item {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .experience-item:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 0.35rem;
-    }
-
-    .exp-header h3 {
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-
-    .exp-header .org {
-      font-size: 0.95rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .exp-header .date-loc {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    ul.clean-list {
-      list-style-type: square;
-      padding-left: 1.25rem;
-      margin-top: 0.4rem;
-    }
-
-    ul.clean-list li {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.35rem;
-    }
-
     /* Skills Grid */
     .skills-grid {
       display: grid;
@@ -333,7 +320,7 @@
     @media (max-width: 640px) {
       nav ul { display: none; }
       .profile-card h1 { font-size: 1.8rem; }
-      .exp-header { flex-direction: column; }
+      .pdf-viewer { height: 450px; }
     }
   </style>
 </head>
@@ -345,9 +332,9 @@
       <a href="#" class="logo">Tara Das</a>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#resume-file">Resume</a></li>
         <li><a href="#personal-research">Personal Research</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education & Skills</a></li>
+        <li><a href="#skills">Skills</a></li>
       </ul>
     </nav>
   </header>
@@ -367,6 +354,24 @@
         <span class="contact-pill">Fairfax & Blacksburg, VA</span>
       </div>
     </div>
+
+    <!-- Resume File Section -->
+    <section id="resume-file">
+      <h2 class="section-title">Resume</h2>
+      
+      <div class="resume-actions">
+        <a href="resume.pdf" download="Uttara_Das_Resume.pdf" class="btn-download">
+          Download PDF
+        </a>
+        <a href="resume.pdf" target="_blank" class="btn-view">
+          Open in New Tab
+        </a>
+      </div>
+
+      <iframe src="resume.pdf" class="pdf-viewer" title="Uttara Das Resume">
+        <p>Your browser does not support inline PDFs. <a href="resume.pdf">Click here to download the resume.</a></p>
+      </iframe>
+    </section>
 
     <!-- Personal Research Tab / Section -->
     <section id="personal-research">
@@ -424,7 +429,7 @@
         In healthy states, the Default Mode Network (DMN, self reflection) and Central Executive Network (CEN, external focus) balance each other dynamically. In dissociative states, DMN connectivity drops, bringing on feelings of depersonalization. Additionally, extreme stress can prompt corticolimbic over modulation, where frontal regions suddenly shut down fear centers to force an escape, causing emotional numbness.
       </p>
 
-      <!-- Dependent, smaller section for projects from the resume -->
+      <!-- Dependent, smaller section for projects -->
       <div class="dependent-projects">
         <div class="dep-title">Other Independent Projects & Lab Work</div>
 
@@ -450,97 +455,20 @@
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience">
-      <h2 class="section-title">Clinical & Work Experience</h2>
-
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3>Clinical Shadowing Intern</h3>
-            <span class="org">Integrative Medicine Associates | Oradell, NJ</span>
-          </div>
-          <span class="date-loc">May 2026 – Aug 2026 & May 2024 – Aug 2024</span>
-        </div>
-        <ul class="clean-list">
-          <li>Observed clinical workflows focused on chronic disease management and personalized patient care models.</li>
-          <li>Supported clinic intake coordination, schedule maintenance, and direct patient communication.</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3>Clinical Shadowing Intern</h3>
-            <span class="org">Concierge Internal Medicine | Reston, VA</span>
-          </div>
-          <span class="date-loc">June 2024 – August 2024</span>
-        </div>
-        <ul class="clean-list">
-          <li>Observed patient triage, treatment plans, and daily discussions between clinical teams and medical sales representatives.</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3>Pharmacy Clerk</h3>
-            <span class="org">Giant Food | Reston, VA</span>
-          </div>
-          <span class="date-loc">June 2024 – August 2024</span>
-        </div>
-        <ul class="clean-list">
-          <li>Dispensed prescriptions and worked directly with EnterpriseRX and PickPoint systems.</li>
-          <li>Handled patient inquiries and helped coordinate verification calls with physician offices.</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3>Treasurer & Social Media Manager</h3>
-            <span class="org">GOAERO Drone Club | Blacksburg, VA</span>
-          </div>
-          <span class="date-loc">August 2024 – August 2025</span>
-        </div>
-        <ul class="clean-list">
-          <li>Managed club finances, maintained account records, and directed social outreach across campus.</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3>Volunteer</h3>
-            <span class="org">Luv Michael | Remote</span>
-          </div>
-          <span class="date-loc">April 2026 – Present</span>
-        </div>
-        <ul class="clean-list">
-          <li>Completed over 30 hours mapping housing and healthcare resources for autistic adults across national databases.</li>
-        </ul>
-      </div>
-    </section>
-
     <!-- Education & Skills -->
-    <section id="education">
+    <section id="skills">
       <h2 class="section-title">Education & Skills</h2>
 
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3>Virginia Tech</h3>
-            <span class="org">B.S. in Microbiology</span>
-          </div>
-          <span class="date-loc">August 2022 – Expected Dec 2026</span>
-        </div>
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.05rem;">Virginia Tech</h3>
+        <p style="color: var(--primary); font-weight: 600; font-size: 0.95rem;">B.S. in Microbiology (Expected Dec 2026)</p>
         <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.35rem;">
           <strong>Certifications:</strong> Mental Health First Aid (MHFA, August 2026)<br>
           <strong>Relevant Labs & Courses:</strong> Biostatistics (R & Excel), Organic Chemistry Lab, General Biology Lab
         </p>
       </div>
 
-      <div class="skills-grid" style="margin-top: 1.5rem;">
+      <div class="skills-grid">
         <div class="skill-col">
           <h4>Wet Lab</h4>
           <div class="pill-wrap">
