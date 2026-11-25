@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi there 👋. I mostly code just for the fun of it. This is where I keep the little projects, experiments, and random ideas I’ve been tinkering with. Feel free to look around!
 
 <!--
 **uttara500/uttara500** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
